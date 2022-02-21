@@ -1,0 +1,67 @@
+/* CHALLENGE: 
+
+a. Place all 5 figures are on the same row with a 2% gap between each box. You should not need to change the HTML to do this. 
+
+b. If the window is less than 850px, have 3 boxes on one row and 2 boxes on the second row. 
+   Maintain the 2% gap between each box in the first row. (You'll have >2% gap on the 2nd row.) 
+   Distribute any gap as evenly as you can if it's greater than 2%.
+
+c. BONUS: 
+At smaller screen dimensions (<= 850px), have the boxes appear in the center of the page.
+
+ At >850px, align the single row of boxes at the bottom of the page using Flexbox-specific properties (i.e. not margin or positioning).
+
+*/
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+}
+
+.row {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2%;
+}
+
+.row > div {
+  width: 100%;
+  flex-basis: 32%;
+  min-height: 250px;
+}
+
+@media (min-width: 850px) {
+  .row {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .row > div {
+    flex-basis: 18.4%;
+  }
+}
+
+.one {
+  background-color: #9b2226;
+}
+.two {
+  background-color: #bb3e03;
+}
+.three {
+  background-color: #ee9b00;
+}
+.four {
+  background-color: #005f73;
+}
+.five {
+  background-color: #002533;
+}
